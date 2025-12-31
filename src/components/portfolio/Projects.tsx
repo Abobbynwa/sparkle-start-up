@@ -36,7 +36,7 @@ const projects = [
     tags: ["Next.js", "Docker", "Security", "Payments"],
     category: "security",
     github: "#",
-    live: "#",
+    live: "https://lovable-frontend-ace.vercel.app/",
     featured: true,
   },
   {
