@@ -104,7 +104,7 @@ const Hero = () => {
         {/* Social Links */}
         <div className="flex gap-6 justify-center opacity-0 animate-fade-up stagger-5">
           <a
-            href="https://github.com/valentineagaba"
+            href="https://github.com/Abobbynwa"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary)/0.5)]"
@@ -120,7 +120,7 @@ const Hero = () => {
             <Linkedin className="w-6 h-6" />
           </a>
           <a
-            href="mailto:valentineagaba7@gmail.com"
+            href="mailto:valentineagaba16@gmail.com"
             className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary)/0.5)]"
           >
             <Mail className="w-6 h-6" />
