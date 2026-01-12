@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Calendar, Clock, ArrowRight, X } from "lucide-react";
+import { Calendar, Clock, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -7,6 +7,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+
+import blogSecurityImg from "@/assets/blog-security.jpg";
+import blogCareerImg from "@/assets/blog-career.jpg";
+import blogDockerImg from "@/assets/blog-docker.jpg";
+import blogLinuxImg from "@/assets/blog-linux.jpg";
+import blogVulnerabilityImg from "@/assets/blog-vulnerability.jpg";
+import blogNetworkImg from "@/assets/blog-network.jpg";
 
 const articles = [
   {
@@ -44,30 +51,30 @@ const articles = [
     category: "Security",
     date: "Dec 15, 2024",
     readTime: "8 min read",
-    image: "/placeholder.svg",
+    image: blogSecurityImg,
   },
   {
     id: 2,
     title: "From Chemistry to Code: My Journey into Tech",
     excerpt:
-      "How a Chemistry graduate transitioned to full-stack development and cybersecurity — lessons learned and tips for career changers.",
+      "How a Chemistry graduate from ESUT transitioned to full-stack development and cybersecurity — lessons learned and tips for career changers.",
     fullContent: `
       <h3>The Beginning</h3>
-      <p>When I graduated with a degree in Chemistry, I never imagined I'd end up as a full-stack developer and cybersecurity professional. But life has a way of surprising us.</p>
+      <p>When I graduated with a BSc in Chemistry from Enugu State University of Science and Technology (ESUT) in 2023, I never imagined I'd end up as a full-stack developer and cybersecurity professional. But life has a way of surprising us.</p>
       
       <h3>The Transition</h3>
-      <p>My journey started with curiosity. I began learning Python to automate some repetitive lab tasks, and that's when I discovered my passion for coding. The logical thinking skills from Chemistry transferred perfectly to programming.</p>
+      <p>My journey started with curiosity. I began learning Python to automate some repetitive lab tasks, and that's when I discovered my passion for coding. The logical thinking and analytical skills from Chemistry transferred perfectly to programming and cybersecurity.</p>
       
       <h3>Key Lessons Learned</h3>
       <ul>
         <li><strong>Start with fundamentals:</strong> Don't rush into frameworks. Understand core programming concepts first.</li>
-        <li><strong>Build projects:</strong> Theory is important, but hands-on experience is invaluable.</li>
-        <li><strong>Network actively:</strong> Connect with other developers, attend meetups, and join online communities.</li>
-        <li><strong>Embrace the struggle:</strong> Imposter syndrome is real, but persistence pays off.</li>
+        <li><strong>Build projects:</strong> I developed full-stack applications including e-commerce platforms, food ordering systems, and school portals.</li>
+        <li><strong>Leverage AI tools:</strong> Using ChatGPT, Claude, and Copilot accelerated my learning and rapid prototyping.</li>
+        <li><strong>Get certified:</strong> Certifications from HackerRank, Cisco, and Forage validated my skills.</li>
       </ul>
       
       <h3>Why Cybersecurity?</h3>
-      <p>As I built more applications, I became increasingly interested in how to secure them. This led me to explore cybersecurity, which combines technical skills with investigative thinking—much like my chemistry background.</p>
+      <p>As I built more applications, I became increasingly interested in how to secure them. This led me to explore cybersecurity, combining technical skills with investigative thinking—much like my chemistry background analyzing compounds.</p>
       
       <h3>Tips for Career Changers</h3>
       <p>If you're considering a career change into tech, remember: your previous experience is an asset, not a liability. The analytical skills, problem-solving abilities, and domain knowledge you bring are valuable in tech.</p>
@@ -75,7 +82,7 @@ const articles = [
     category: "Career",
     date: "Dec 10, 2024",
     readTime: "5 min read",
-    image: "/placeholder.svg",
+    image: blogCareerImg,
   },
   {
     id: 3,
@@ -114,14 +121,136 @@ const articles = [
     category: "DevOps",
     date: "Dec 5, 2024",
     readTime: "10 min read",
-    image: "/placeholder.svg",
+    image: blogDockerImg,
+  },
+  {
+    id: 4,
+    title: "Linux Security Hardening: Protecting Your Servers",
+    excerpt:
+      "Essential Linux security practices I've applied while consulting for SMEs — from access control to intrusion detection.",
+    fullContent: `
+      <h3>Introduction</h3>
+      <p>As a Cybersecurity & Linux Consultant, I've secured Linux environments for SMEs and technical labs. Here are the essential practices that have helped me improve server uptime and resilience by 30%.</p>
+      
+      <h3>1. Access Control</h3>
+      <p>Proper access control is the foundation of Linux security:</p>
+      <ul>
+        <li><strong>SSH Key Authentication:</strong> Disable password authentication and use SSH keys only.</li>
+        <li><strong>Fail2Ban:</strong> Implement automatic IP banning for failed login attempts.</li>
+        <li><strong>Sudo Configuration:</strong> Limit sudo access to specific commands and users.</li>
+        <li><strong>User Management:</strong> Regularly audit user accounts and remove inactive ones.</li>
+      </ul>
+      
+      <h3>2. Firewall Configuration</h3>
+      <p>Use iptables or ufw to configure strict firewall rules. Only allow necessary incoming connections and log all denied traffic for analysis.</p>
+      
+      <h3>3. System Updates</h3>
+      <p>Keep your system updated with the latest security patches. Automate security updates while carefully managing application updates.</p>
+      
+      <h3>4. Monitoring & Auditing</h3>
+      <ul>
+        <li>Implement centralized logging with tools like rsyslog or ELK stack</li>
+        <li>Use auditd for system call auditing</li>
+        <li>Set up intrusion detection with OSSEC or Wazuh</li>
+      </ul>
+      
+      <h3>Conclusion</h3>
+      <p>Linux security is about layers. No single measure is enough—combine multiple strategies for comprehensive protection.</p>
+    `,
+    category: "Linux",
+    date: "Nov 28, 2024",
+    readTime: "7 min read",
+    image: blogLinuxImg,
+  },
+  {
+    id: 5,
+    title: "Vulnerability Assessment: A Practical Approach",
+    excerpt:
+      "How to perform effective vulnerability assessments and deliver actionable remediation reports for your clients.",
+    fullContent: `
+      <h3>What is Vulnerability Assessment?</h3>
+      <p>Vulnerability assessment is the systematic process of identifying, quantifying, and prioritizing security vulnerabilities in systems and applications. It's a crucial component of any security program.</p>
+      
+      <h3>The Assessment Process</h3>
+      <ul>
+        <li><strong>Scoping:</strong> Define the assessment boundaries and objectives with stakeholders.</li>
+        <li><strong>Discovery:</strong> Identify all assets within scope using network scanning tools.</li>
+        <li><strong>Scanning:</strong> Use automated tools like Nessus, OpenVAS, or Nmap to identify vulnerabilities.</li>
+        <li><strong>Analysis:</strong> Validate findings and eliminate false positives.</li>
+        <li><strong>Reporting:</strong> Document findings with clear remediation guidance.</li>
+      </ul>
+      
+      <h3>Tools of the Trade</h3>
+      <p>Popular vulnerability scanning tools include:</p>
+      <ul>
+        <li>Nessus - Comprehensive vulnerability scanner</li>
+        <li>OpenVAS - Open-source alternative</li>
+        <li>Nmap - Network discovery and security auditing</li>
+        <li>Nikto - Web server scanner</li>
+        <li>OWASP ZAP - Web application security testing</li>
+      </ul>
+      
+      <h3>Delivering Value</h3>
+      <p>The key to successful assessments is delivering actionable reports. Prioritize findings by risk, provide clear remediation steps, and follow up to verify fixes. Becoming a trusted advisor to clients means helping them understand not just what's wrong, but how to fix it effectively.</p>
+    `,
+    category: "Security",
+    date: "Nov 20, 2024",
+    readTime: "6 min read",
+    image: blogVulnerabilityImg,
+  },
+  {
+    id: 6,
+    title: "Network Monitoring: Keeping Systems Healthy",
+    excerpt:
+      "Best practices for network performance monitoring and troubleshooting from my experience at Coscharis Group.",
+    fullContent: `
+      <h3>The Importance of Network Monitoring</h3>
+      <p>As an IT Operations / Systems & Network Support Engineer at Coscharis Group, I've learned that proactive network monitoring is essential for minimizing downtime and maintaining business continuity.</p>
+      
+      <h3>Key Monitoring Metrics</h3>
+      <ul>
+        <li><strong>Bandwidth Utilization:</strong> Track network throughput to identify bottlenecks.</li>
+        <li><strong>Latency:</strong> Monitor response times between network nodes.</li>
+        <li><strong>Packet Loss:</strong> Detect and investigate dropped packets.</li>
+        <li><strong>Device Health:</strong> Monitor CPU, memory, and interface status.</li>
+      </ul>
+      
+      <h3>Monitoring Tools</h3>
+      <p>Effective network monitoring requires the right tools:</p>
+      <ul>
+        <li>PRTG Network Monitor - Comprehensive monitoring solution</li>
+        <li>Nagios - Open-source infrastructure monitoring</li>
+        <li>Zabbix - Enterprise-class monitoring</li>
+        <li>Wireshark - Deep packet analysis</li>
+      </ul>
+      
+      <h3>Troubleshooting Approach</h3>
+      <p>When issues arise, follow a systematic approach:</p>
+      <ul>
+        <li>Identify the scope and impact of the issue</li>
+        <li>Gather relevant data from monitoring tools and logs</li>
+        <li>Isolate the problem to specific network segments</li>
+        <li>Implement and verify the solution</li>
+        <li>Document the issue and resolution for future reference</li>
+      </ul>
+      
+      <h3>User Support</h3>
+      <p>Technical support isn't just about fixing problems—it's about helping users understand network resources and empowering them to work efficiently.</p>
+    `,
+    category: "IT Ops",
+    date: "Nov 15, 2024",
+    readTime: "8 min read",
+    image: blogNetworkImg,
   },
 ];
 
 const Blog = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState<typeof articles[0] | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const displayedArticles = showAll ? articles : articles.slice(0, 3);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -145,6 +274,8 @@ const Blog = () => {
       Security: "bg-accent/20 text-accent",
       Career: "bg-neon-green/20 text-neon-green",
       DevOps: "bg-primary/20 text-primary",
+      Linux: "bg-neon-purple/20 text-neon-purple",
+      "IT Ops": "bg-neon-cyan/20 text-neon-cyan",
     };
     return colors[category] || colors.Security;
   };
@@ -178,7 +309,7 @@ const Blog = () => {
 
         {/* Articles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {articles.map((article, index) => (
+          {displayedArticles.map((article, index) => (
             <article
               key={article.id}
               onClick={() => setSelectedArticle(article)}
@@ -249,10 +380,20 @@ const Blog = () => {
           <Button
             variant="outline"
             size="lg"
+            onClick={() => setShowAll(!showAll)}
             className="border-primary/50 text-primary hover:bg-primary/10 font-mono"
           >
-            View All Articles
-            <ArrowRight className="w-4 h-4 ml-2" />
+            {showAll ? (
+              <>
+                Show Less
+                <ChevronUp className="w-4 h-4 ml-2" />
+              </>
+            ) : (
+              <>
+                View All Articles ({articles.length})
+                <ChevronDown className="w-4 h-4 ml-2" />
+              </>
+            )}
           </Button>
         </div>
       </div>
@@ -262,6 +403,15 @@ const Blog = () => {
         <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto bg-card border-primary/20">
           {selectedArticle && (
             <>
+              {/* Modal Header Image */}
+              <div className="relative h-48 -mx-6 -mt-6 mb-4 overflow-hidden rounded-t-lg">
+                <img
+                  src={selectedArticle.image}
+                  alt={selectedArticle.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+              </div>
               <DialogHeader>
                 <div className="flex items-center gap-4 text-xs text-muted-foreground mb-2">
                   <span
