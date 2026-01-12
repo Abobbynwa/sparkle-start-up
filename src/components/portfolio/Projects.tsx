@@ -2,13 +2,21 @@ import { useEffect, useRef, useState } from "react";
 import { ExternalLink, Github, Lock, Code, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Import project thumbnails
+import chatbotImg from "@/assets/project-chatbot.jpg";
+import schoolImg from "@/assets/project-school.jpg";
+import ecommerceImg from "@/assets/project-ecommerce.jpg";
+import scannerImg from "@/assets/project-scanner.jpg";
+import cicdImg from "@/assets/project-cicd.jpg";
+import networkImg from "@/assets/project-network.jpg";
+
 const projects = [
   {
     id: 1,
     title: "AI-Powered Chatbot",
     description:
       "Intelligent chatbot built with Python and OpenAI GPT API. Features natural language processing, context awareness, and multi-turn conversations.",
-    image: "/placeholder.svg",
+    image: chatbotImg,
     tags: ["Python", "OpenAI API", "NLP", "FastAPI"],
     category: "development",
     github: "#",
@@ -20,7 +28,7 @@ const projects = [
     title: "School Management Platform",
     description:
       "Full-featured school management system with RBAC, payment integration, student portals, and administrative dashboards.",
-    image: "/placeholder.svg",
+    image: schoolImg,
     tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
     category: "development",
     github: "#",
@@ -32,7 +40,7 @@ const projects = [
     title: "Secure E-Commerce Platform",
     description:
       "End-to-end encrypted e-commerce solution with Docker containerization, secure payment processing, and comprehensive security audits.",
-    image: "/placeholder.svg",
+    image: ecommerceImg,
     tags: ["Next.js", "Docker", "Security", "Payments"],
     category: "security",
     github: "#",
@@ -44,7 +52,7 @@ const projects = [
     title: "Vulnerability Scanner Tool",
     description:
       "Custom security tool for automated vulnerability scanning and reporting. Identifies OWASP Top 10 vulnerabilities.",
-    image: "/placeholder.svg",
+    image: scannerImg,
     tags: ["Python", "Security", "API", "Automation"],
     category: "security",
     github: "#",
@@ -54,7 +62,7 @@ const projects = [
     title: "DevOps CI/CD Pipeline",
     description:
       "Automated deployment pipeline with GitHub Actions, Docker, and AWS integration for seamless continuous delivery.",
-    image: "/placeholder.svg",
+    image: cicdImg,
     tags: ["Docker", "GitHub Actions", "AWS", "Linux"],
     category: "devops",
     github: "#",
@@ -64,7 +72,7 @@ const projects = [
     title: "Network Monitoring Dashboard",
     description:
       "Real-time network monitoring solution with alerts, traffic analysis, and security event logging.",
-    image: "/placeholder.svg",
+    image: networkImg,
     tags: ["React", "Node.js", "WebSocket", "Security"],
     category: "devops",
     github: "#",
