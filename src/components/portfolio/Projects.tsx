@@ -19,7 +19,7 @@ const projects = [
     image: chatbotImg,
     tags: ["Python", "OpenAI API", "NLP", "FastAPI"],
     category: "development",
-    github: "#",
+    github: "https://github.com/Abobbynwa",
     live: "#",
     featured: true,
   },
@@ -31,7 +31,7 @@ const projects = [
     image: schoolImg,
     tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
     category: "development",
-    github: "#",
+    github: "https://github.com/Abobbynwa",
     live: "#",
     featured: true,
   },
@@ -44,7 +44,7 @@ const projects = [
     tags: ["Next.js", "Docker", "Security", "Payments"],
     category: "security",
     github: "#",
-    live: "https://lovable-frontend-ace.vercel.app/",
+    live: "https://github.com/Abobbynwa",
     featured: true,
   },
   {
@@ -55,7 +55,7 @@ const projects = [
     image: scannerImg,
     tags: ["Python", "Security", "API", "Automation"],
     category: "security",
-    github: "#",
+    github: "https://github.com/Abobbynwa",
   },
   {
     id: 5,
@@ -65,7 +65,7 @@ const projects = [
     image: cicdImg,
     tags: ["Docker", "GitHub Actions", "AWS", "Linux"],
     category: "devops",
-    github: "#",
+    github: "https://github.com/Abobbynwa",
   },
   {
     id: 6,
@@ -75,7 +75,7 @@ const projects = [
     image: networkImg,
     tags: ["React", "Node.js", "WebSocket", "Security"],
     category: "devops",
-    github: "#",
+    github: "https://github.com/Abobbynwa",
     live: "#",
   },
 ];
