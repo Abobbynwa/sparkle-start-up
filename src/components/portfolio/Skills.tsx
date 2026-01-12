@@ -203,7 +203,7 @@ const Skills = () => {
               "TypeScript",
               "Docker",
               "PostgreSQL",
-              "MongoDB",
+              "MySql Lite3",
               "AWS",
               "Linux",
               "Git",
