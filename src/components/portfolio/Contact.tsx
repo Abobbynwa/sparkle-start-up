@@ -95,13 +95,13 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
                     <p className="font-mono text-foreground">
-                      valentineagaba7@gmail.com
+                      valentineagaba16@gmail.com
                     </p>
                   </div>
                 </a>
 
                 <a
-                  href="tel:+2348123456789"
+                  href="tel:+2348160415837"
                   className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
                 >
                   <div className="p-3 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
@@ -110,7 +110,7 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">Phone</p>
                     <p className="font-mono text-foreground">
-                      +234 812 345 6789
+                     +2348160415837
                     </p>
                   </div>
                 </a>
