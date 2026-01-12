@@ -75,7 +75,7 @@ const projects = [
     image: networkImg,
     tags: ["React", "Node.js", "WebSocket", "Security"],
     category: "devops",
-    github: "https://github.com/Abobbynwa",
+    github: "https://github.com/Abobbynwa/noc-live-view",
     live: "#",
   },
 ];
