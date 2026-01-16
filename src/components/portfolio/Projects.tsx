@@ -9,6 +9,7 @@ import ecommerceImg from "@/assets/project-ecommerce.jpg";
 import scannerImg from "@/assets/project-scanner.jpg";
 import cicdImg from "@/assets/project-cicd.jpg";
 import networkImg from "@/assets/project-network.jpg";
+import skyfinderImg from "@/assets/project-skyfinder.jpg";
 
 const projects = [
   {
@@ -77,6 +78,18 @@ const projects = [
     category: "devops",
     github: "https://github.com/Abobbynwa/noc-live-view",
     live: "https://noc-live-view-okgkyupkv-abobbynwas-projects.vercel.app/",
+  },
+  {
+    id: 7,
+    title: "Sky Finder",
+    description:
+      "Flight tracking and aviation information platform with real-time flight data, airport details, and route visualization.",
+    image: skyfinderImg,
+    tags: ["React", "API", "Aviation", "Real-time"],
+    category: "development",
+    github: "https://github.com/Abobbynwa/sky-finder",
+    live: "https://sky-finder-kappa.vercel.app/",
+    featured: true,
   },
 ];
 
