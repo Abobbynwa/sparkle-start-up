@@ -88,7 +88,7 @@ const projects = [
     tags: ["React", "API", "Aviation", "Real-time"],
     category: "development",
     github: "https://github.com/Abobbynwa/sky-finder",
-    live: "https://sky-finder-kappa.vercel.app/",
+    live: "https://skyfligh.lovable.app",
     featured: true,
   },
 ];
