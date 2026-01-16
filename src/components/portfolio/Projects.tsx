@@ -76,7 +76,7 @@ const projects = [
     tags: ["React", "Node.js", "WebSocket", "Security"],
     category: "devops",
     github: "https://github.com/Abobbynwa/noc-live-view",
-    live: "#",
+    live: "https://noc-live-view-okgkyupkv-abobbynwas-projects.vercel.app/",
   },
 ];
 
