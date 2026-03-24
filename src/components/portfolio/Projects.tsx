@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { ExternalLink, Github, Lock, Code, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,6 +11,7 @@ import scannerImg from "@/assets/project-scanner.jpg";
 import cicdImg from "@/assets/project-cicd.jpg";
 import networkImg from "@/assets/project-network.jpg";
 import skyfinderImg from "@/assets/project-skyfinder.jpg";
+import cyberReportImg from "@/assets/project-cyber-report.jpg";
 
 const projects = [
   {
@@ -91,6 +93,24 @@ const projects = [
     live: "https://skyfligh.lovable.app",
     featured: true,
   },
+  {
+    id: 8,
+    title: "Cybersecurity Incident Investigation",
+    description:
+      "Detailed security investigation of a suspicious web platform using Kali Linux reconnaissance tools including WhatWeb, Gobuster, Katana, and Nikto. The project focused on identifying exposed endpoints, attack surface indicators, OSINT findings, IOC documentation, threat intelligence insights, and mapping observed activity to the MITRE ATT&CK framework.",
+    image: cyberReportImg,
+    tags: [
+      "Kali Linux",
+      "OSINT",
+      "Threat Intelligence",
+      "MITRE ATT&CK",
+      "Incident Response",
+    ],
+    category: "security",
+    github: "https://github.com/Abobbynwa/agaba_valentine_elite_cyber_report",
+    live: "https://github.com/Abobbynwa/agaba_valentine_elite_cyber_report",
+    featured: true,
+  },
 ];
 
 const categories = [
@@ -128,7 +148,11 @@ const Projects = () => {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section ref={sectionRef} id="projects" className="py-24 relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      id="projects"
+      className="py-24 relative overflow-hidden"
+    >
       <div className="absolute inset-0 tech-grid opacity-20" />
       <div className="absolute top-1/3 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
 
@@ -226,7 +250,11 @@ const Projects = () => {
                       className="text-muted-foreground hover:text-primary"
                       asChild
                     >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Github className="w-4 h-4 mr-1" />
                         Code
                       </a>
@@ -239,7 +267,11 @@ const Projects = () => {
                       className="text-muted-foreground hover:text-primary"
                       asChild
                     >
-                      <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <ExternalLink className="w-4 h-4 mr-1" />
                         Live
                       </a>
