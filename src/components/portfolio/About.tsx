@@ -4,7 +4,7 @@ import { Code2, Shield, Server, Award } from "lucide-react";
 const stats = [
   { icon: Code2, value: "5+", label: "Projects Delivered" },
   { icon: Shield, value: "5+", label: "Certifications" },
-  { icon: Server, value: "35+", label: "Years Experience" },
+  { icon: Server, value: "3+", label: "Years Experience" },
   { icon: Award, value: "90%", label: "Client Satisfaction" },
 ];
 
