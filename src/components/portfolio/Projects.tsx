@@ -58,7 +58,7 @@ const projects = [
     image: scannerImg,
     tags: ["Python", "Security", "API", "Automation"],
     category: "security",
-    github: "https://github.com/Abobbynwa",
+    github: "https://https://github.com/Abobbynwa/vuln-scanner",
   },
   {
     id: 5,
