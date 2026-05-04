@@ -112,7 +112,20 @@ const projects = [
     featured: true,
   },
 ];
-{
+const projects = [
+  {
+    id: 8,
+    title: "Previous Project",
+    description: "Previous description",
+    image: someImage,
+    tags: ["React", "Security"],
+    category: "security",
+    github: "https://github.com/...",
+    live: "https://github.com/...",
+    featured: true,
+  }, // VERY IMPORTANT COMMA HERE
+
+  {
     id: 9,
     title: "Cybersecurity Incident Investigation",
     description:
@@ -131,7 +144,6 @@ const projects = [
     featured: true,
   },
 ];
-
 const categories = [
   { id: "all", label: "All Projects", icon: Globe },
   { id: "development", label: "Development", icon: Code },
