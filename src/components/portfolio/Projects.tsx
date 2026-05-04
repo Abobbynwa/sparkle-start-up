@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { ExternalLink, Github, Lock, Code, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Import project thumbnails
 import chatbotImg from "@/assets/project-chatbot.jpg";
 import schoolImg from "@/assets/project-school.jpg";
 import ecommerceImg from "@/assets/project-ecommerce.jpg";
@@ -167,7 +166,6 @@ const Projects = () => {
       <div className="absolute top-1/3 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
         <div
           className={`text-center mb-16 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -182,7 +180,6 @@ const Projects = () => {
           </h2>
         </div>
 
-        {/* Filter Tabs */}
         <div
           className={`flex flex-wrap justify-center gap-3 mb-12 transition-all duration-700 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -209,7 +206,6 @@ const Projects = () => {
           })}
         </div>
 
-        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <div
@@ -221,7 +217,6 @@ const Projects = () => {
               }`}
               style={{ transitionDelay: `${index * 100 + 300}ms` }}
             >
-              {/* Project Image */}
               <div className="relative h-48 bg-secondary overflow-hidden">
                 <img
                   src={project.image}
@@ -238,7 +233,6 @@ const Projects = () => {
                 )}
               </div>
 
-              {/* Project Content */}
               <div className="p-6">
                 <h3 className="text-xl font-bold font-mono mb-2 group-hover:text-primary transition-colors">
                   {project.title}
@@ -248,7 +242,6 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
@@ -260,7 +253,6 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {/* Links */}
                 <div className="flex gap-3">
                   {project.github && project.github !== "#" && (
                     <Button
