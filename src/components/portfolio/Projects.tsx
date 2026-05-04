@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { ExternalLink, Github, Lock, Code, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -46,7 +45,7 @@ const projects = [
     image: ecommerceImg,
     tags: ["Next.js", "Docker", "Security", "Payments"],
     category: "security",
-    github: "#",
+    github: "https://github.com/Abobbynwa",
     live: "https://github.com/Abobbynwa",
     featured: true,
   },
@@ -58,7 +57,9 @@ const projects = [
     image: scannerImg,
     tags: ["Python", "Security", "API", "Automation"],
     category: "security",
-    github: "https://https://github.com/Abobbynwa/vuln-scanner",
+    github: "https://github.com/Abobbynwa/vuln-scanner",
+    live: "#",
+    featured: false,
   },
   {
     id: 5,
@@ -69,6 +70,8 @@ const projects = [
     tags: ["Docker", "GitHub Actions", "AWS", "Linux"],
     category: "devops",
     github: "https://github.com/Abobbynwa",
+    live: "#",
+    featured: false,
   },
   {
     id: 6,
@@ -80,6 +83,7 @@ const projects = [
     category: "devops",
     github: "https://github.com/Abobbynwa/noc-live-view",
     live: "https://noc-live-view-okgkyupkv-abobbynwas-projects.vercel.app/",
+    featured: false,
   },
   {
     id: 7,
@@ -112,38 +116,7 @@ const projects = [
     featured: true,
   },
 ];
-const projects = [
-  {
-    id: 8,
-    title: "Previous Project",
-    description: "Previous description",
-    image: someImage,
-    tags: ["React", "Security"],
-    category: "security",
-    github: "https://github.com/...",
-    live: "https://github.com/...",
-    featured: true,
-  }, // VERY IMPORTANT COMMA HERE
 
-  {
-    id: 9,
-    title: "Cybersecurity Incident Investigation",
-    description:
-      "Detailed security investigation of a suspicious web platform using Kali Linux reconnaissance tools including WhatWeb, Gobuster, Katana, and Nikto. The project focused on identifying exposed endpoints, attack surface indicators, OSINT findings, IOC documentation, threat intelligence insights, and mapping observed activity to the MITRE ATT&CK framework.",
-    image: cyberReportImg,
-    tags: [
-      "Kali Linux",
-      "OSINT",
-      "Threat Intelligence",
-      "MITRE ATT&CK",
-      "Incident Response",
-    ],
-    category: "security",
-    github: "https://github.com/Abobbynwa/agaba_valentine_elite_cyber_report",
-    live: "https://github.com/Abobbynwa/agaba_valentine_elite_cyber_report",
-    featured: true,
-  },
-];
 const categories = [
   { id: "all", label: "All Projects", icon: Globe },
   { id: "development", label: "Development", icon: Code },
@@ -166,17 +139,23 @@ const Projects = () => {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentSection = sectionRef.current;
+
+    if (currentSection) {
+      observer.observe(currentSection);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
   }, []);
 
   const filteredProjects =
     activeFilter === "all"
       ? projects
-      : projects.filter((p) => p.category === activeFilter);
+      : projects.filter((project) => project.category === activeFilter);
 
   return (
     <section
@@ -197,6 +176,7 @@ const Projects = () => {
           <span className="text-primary font-mono text-sm uppercase tracking-wider">
             Portfolio
           </span>
+
           <h2 className="text-4xl md:text-5xl font-bold font-mono mt-2">
             Featured <span className="gradient-text">Projects</span>
           </h2>
@@ -208,20 +188,25 @@ const Projects = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveFilter(cat.id)}
-              className={`flex items-center gap-2 px-5 py-2 rounded-full font-mono text-sm transition-all duration-300 ${
-                activeFilter === cat.id
-                  ? "bg-primary text-primary-foreground"
-                  : "border border-border hover:border-primary/50 text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <cat.icon className="w-4 h-4" />
-              {cat.label}
-            </button>
-          ))}
+          {categories.map((category) => {
+            const Icon = category.icon;
+
+            return (
+              <button
+                key={category.id}
+                type="button"
+                onClick={() => setActiveFilter(category.id)}
+                className={`flex items-center gap-2 px-5 py-2 rounded-full font-mono text-sm transition-all duration-300 ${
+                  activeFilter === category.id
+                    ? "bg-primary text-primary-foreground"
+                    : "border border-border hover:border-primary/50 text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <Icon className="w-4 h-4" />
+                {category.label}
+              </button>
+            );
+          })}
         </div>
 
         {/* Projects Grid */}
@@ -243,7 +228,9 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+
                 {project.featured && (
                   <span className="absolute top-3 right-3 px-2 py-1 text-xs font-mono bg-primary text-primary-foreground rounded">
                     Featured
@@ -256,6 +243,7 @@ const Projects = () => {
                 <h3 className="text-xl font-bold font-mono mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
+
                 <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
                   {project.description}
                 </p>
@@ -264,7 +252,7 @@ const Projects = () => {
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
-                      key={tag}
+                      key={`${project.id}-${tag}`}
                       className="px-2 py-1 text-xs font-mono rounded bg-secondary text-muted-foreground"
                     >
                       {tag}
@@ -274,7 +262,7 @@ const Projects = () => {
 
                 {/* Links */}
                 <div className="flex gap-3">
-                  {project.github && (
+                  {project.github && project.github !== "#" && (
                     <Button
                       variant="ghost"
                       size="sm"
@@ -291,7 +279,8 @@ const Projects = () => {
                       </a>
                     </Button>
                   )}
-                  {project.live && (
+
+                  {project.live && project.live !== "#" && (
                     <Button
                       variant="ghost"
                       size="sm"
