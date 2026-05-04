@@ -112,6 +112,25 @@ const projects = [
     featured: true,
   },
 ];
+{
+    id: 9,
+    title: "Cybersecurity Incident Investigation",
+    description:
+      "Detailed security investigation of a suspicious web platform using Kali Linux reconnaissance tools including WhatWeb, Gobuster, Katana, and Nikto. The project focused on identifying exposed endpoints, attack surface indicators, OSINT findings, IOC documentation, threat intelligence insights, and mapping observed activity to the MITRE ATT&CK framework.",
+    image: cyberReportImg,
+    tags: [
+      "Kali Linux",
+      "OSINT",
+      "Threat Intelligence",
+      "MITRE ATT&CK",
+      "Incident Response",
+    ],
+    category: "security",
+    github: "https://github.com/Abobbynwa/agaba_valentine_elite_cyber_report",
+    live: "https://github.com/Abobbynwa/agaba_valentine_elite_cyber_report",
+    featured: true,
+  },
+];
 
 const categories = [
   { id: "all", label: "All Projects", icon: Globe },
