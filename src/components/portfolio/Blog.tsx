@@ -243,7 +243,58 @@ const articles = [
     image: blogNetworkImg,
   },
 ];
+{
+  id: 7,
+  title: "Critical API Vulnerability: From Discovery to Full Backend Compromise",
+  excerpt:
+    "A real-world penetration testing case study demonstrating how a misconfigured API allowed unauthenticated access to sensitive data and full backend manipulation.",
+  fullContent: `
+    <h3>Introduction</h3>
+    <p>During a security assessment of an enterprise ERP application, I discovered a critical broken access control vulnerability that exposed backend APIs to unauthenticated users.</p>
 
+    <h3>Initial Discovery</h3>
+    <p>The process began with reconnaissance and JavaScript analysis. By inspecting frontend assets, I identified hidden API endpoints used by the application.</p>
+
+    <h3>Vulnerability Identified</h3>
+    <p>The backend failed to enforce authentication, allowing direct access to sensitive endpoints. This meant that any external user could interact with the system without credentials.</p>
+
+    <h3>Exploitation</h3>
+    <ul>
+      <li>Accessed sensitive data via unauthenticated API requests</li>
+      <li>Created new records directly in the system</li>
+      <li>Deleted existing records without authorization</li>
+    </ul>
+
+    <h3>Attack Chain</h3>
+    <p>The full attack flow was as follows:</p>
+    <ul>
+      <li>Frontend JavaScript revealed API structure</li>
+      <li>Direct API access bypassed authentication</li>
+      <li>Backend accepted unauthorized requests</li>
+      <li>Full CRUD operations achieved</li>
+    </ul>
+
+    <h3>Impact</h3>
+    <p>This vulnerability resulted in complete loss of data integrity and exposed sensitive business information. An attacker could manipulate records, inject malicious data, or disrupt operations.</p>
+
+    <h3>Severity</h3>
+    <p><strong>Critical (CVSS 9.8)</strong> — due to no authentication required and high impact on confidentiality, integrity, and availability.</p>
+
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Always enforce authentication at the API level</li>
+      <li>Never rely solely on frontend security</li>
+      <li>Validate all requests server-side</li>
+    </ul>
+
+    <h3>Disclosure</h3>
+    <p>This case study has been sanitized to remove all sensitive details including URLs, IP addresses, and organization-specific data.</p>
+  `,
+  category: "Security",
+  date: "May 2026",
+  readTime: "6 min read",
+  image: blogVulnerabilityImg,
+},
 const Blog = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState<typeof articles[0] | null>(null);
