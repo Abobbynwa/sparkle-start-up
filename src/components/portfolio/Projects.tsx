@@ -14,6 +14,18 @@ import cyberReportImg from "@/assets/project-cyber-report.jpg";
 const projects = [
   {
     id: 1,
+    title: "EduCBT School Examination Portal",
+    description:
+      "A custom CBT platform for schools with class-based exams, JSS/SS subject selection, CBT number generation, automatic scoring, printable result slips, Excel question upload, and admin-controlled exam setup.",
+    image: schoolImg,
+    tags: ["React", "Firebase", "CBT", "EdTech", "Excel Upload"],
+    category: "development",
+    github: "#",
+    live: "https://public-finance-quiz.vercel.app/student.html?v=3500",
+    featured: true,
+  },
+  {
+    id: 2,
     title: "AI-Powered Chatbot",
     description:
       "Intelligent chatbot built with Python and OpenAI GPT API. Features natural language processing, context awareness, and multi-turn conversations.",
@@ -25,7 +37,7 @@ const projects = [
     featured: true,
   },
   {
-    id: 2,
+    id: 3,
     title: "School Management Platform",
     description:
       "Full-featured school management system with RBAC, payment integration, student portals, and administrative dashboards.",
@@ -37,7 +49,7 @@ const projects = [
     featured: true,
   },
   {
-    id: 3,
+    id: 4,
     title: "Secure E-Commerce Platform",
     description:
       "End-to-end encrypted e-commerce solution with Docker containerization, secure payment processing, and comprehensive security audits.",
@@ -49,7 +61,7 @@ const projects = [
     featured: true,
   },
   {
-    id: 4,
+    id: 5,
     title: "Vulnerability Scanner Tool",
     description:
       "Custom security tool for automated vulnerability scanning and reporting. Identifies OWASP Top 10 vulnerabilities.",
@@ -61,7 +73,7 @@ const projects = [
     featured: false,
   },
   {
-    id: 5,
+    id: 6,
     title: "DevOps CI/CD Pipeline",
     description:
       "Automated deployment pipeline with GitHub Actions, Docker, and AWS integration for seamless continuous delivery.",
@@ -73,7 +85,7 @@ const projects = [
     featured: false,
   },
   {
-    id: 6,
+    id: 7,
     title: "Network Monitoring Dashboard",
     description:
       "Real-time network monitoring solution with alerts, traffic analysis, and security event logging.",
@@ -85,7 +97,7 @@ const projects = [
     featured: false,
   },
   {
-    id: 7,
+    id: 8,
     title: "Sky Finder",
     description:
       "Flight tracking and aviation information platform with real-time flight data, airport details, and route visualization.",
@@ -97,7 +109,7 @@ const projects = [
     featured: true,
   },
   {
-    id: 8,
+    id: 9,
     title: "Cybersecurity Incident Investigation",
     description:
       "Detailed security investigation of a suspicious web platform using Kali Linux reconnaissance tools including WhatWeb, Gobuster, Katana, and Nikto. The project focused on identifying exposed endpoints, attack surface indicators, OSINT findings, IOC documentation, threat intelligence insights, and mapping observed activity to the MITRE ATT&CK framework.",
