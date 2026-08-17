@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ExternalLink, Github, Lock, Code, Globe } from "lucide-react";
+import { ExternalLink, Github, Lock, Code, Globe, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import chatbotImg from "@/assets/project-chatbot.jpg";
@@ -15,8 +15,7 @@ const projects = [
   {
     id: 1,
     title: "EduCBT School Examination Portal",
-    description:
-      "A custom CBT platform for schools with class-based exams, JSS/SS subject selection, CBT number generation, automatic scoring, printable result slips, Excel question upload, and admin-controlled exam setup.",
+    description: "A custom CBT platform for schools with class-based exams, JSS/SS subject selection, CBT number generation, automatic scoring, printable result slips, Excel question upload, and admin-controlled exam setup.",
     image: schoolImg,
     tags: ["React", "Firebase", "CBT", "EdTech", "Excel Upload"],
     category: "development",
@@ -27,8 +26,7 @@ const projects = [
   {
     id: 2,
     title: "AI-Powered Chatbot",
-    description:
-      "Intelligent chatbot built with Python and OpenAI GPT API. Features natural language processing, context awareness, and multi-turn conversations.",
+    description: "Intelligent chatbot built with Python and OpenAI GPT API. Features natural language processing, context awareness, and multi-turn conversations.",
     image: chatbotImg,
     tags: ["Python", "OpenAI API", "NLP", "FastAPI"],
     category: "development",
@@ -39,8 +37,7 @@ const projects = [
   {
     id: 3,
     title: "School Management Platform",
-    description:
-      "Full-featured school management system with RBAC, payment integration, student portals, and administrative dashboards.",
+    description: "Full-featured school management system with RBAC, payment integration, student portals, and administrative dashboards.",
     image: schoolImg,
     tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
     category: "development",
@@ -51,8 +48,7 @@ const projects = [
   {
     id: 4,
     title: "Secure E-Commerce Platform",
-    description:
-      "End-to-end encrypted e-commerce solution with Docker containerization, secure payment processing, and comprehensive security audits.",
+    description: "End-to-end encrypted e-commerce solution with Docker containerization, secure payment processing, and comprehensive security audits.",
     image: ecommerceImg,
     tags: ["Next.js", "Docker", "Security", "Payments"],
     category: "security",
@@ -63,8 +59,7 @@ const projects = [
   {
     id: 5,
     title: "Vulnerability Scanner Tool",
-    description:
-      "Custom security tool for automated vulnerability scanning and reporting. Identifies OWASP Top 10 vulnerabilities.",
+    description: "Custom security tool for automated vulnerability scanning and reporting. Identifies OWASP Top 10 vulnerabilities.",
     image: scannerImg,
     tags: ["Python", "Security", "API", "Automation"],
     category: "security",
@@ -75,8 +70,7 @@ const projects = [
   {
     id: 6,
     title: "DevOps CI/CD Pipeline",
-    description:
-      "Automated deployment pipeline with GitHub Actions, Docker, and AWS integration for seamless continuous delivery.",
+    description: "Automated deployment pipeline with GitHub Actions, Docker, and AWS integration for seamless continuous delivery.",
     image: cicdImg,
     tags: ["Docker", "GitHub Actions", "AWS", "Linux"],
     category: "devops",
@@ -87,8 +81,7 @@ const projects = [
   {
     id: 7,
     title: "Network Monitoring Dashboard",
-    description:
-      "Real-time network monitoring solution with alerts, traffic analysis, and security event logging.",
+    description: "Real-time network monitoring solution with alerts, traffic analysis, and security event logging.",
     image: networkImg,
     tags: ["React", "Node.js", "WebSocket", "Security"],
     category: "devops",
@@ -99,8 +92,7 @@ const projects = [
   {
     id: 8,
     title: "Sky Finder",
-    description:
-      "Flight tracking and aviation information platform with real-time flight data, airport details, and route visualization.",
+    description: "Flight tracking and aviation information platform with real-time flight data, airport details, and route visualization.",
     image: skyfinderImg,
     tags: ["React", "API", "Aviation", "Real-time"],
     category: "development",
@@ -111,19 +103,23 @@ const projects = [
   {
     id: 9,
     title: "Cybersecurity Incident Investigation",
-    description:
-      "Detailed security investigation of a suspicious web platform using Kali Linux reconnaissance tools including WhatWeb, Gobuster, Katana, and Nikto. The project focused on identifying exposed endpoints, attack surface indicators, OSINT findings, IOC documentation, threat intelligence insights, and mapping observed activity to the MITRE ATT&CK framework.",
+    description: "Detailed security investigation of a suspicious web platform using Kali Linux reconnaissance tools including WhatWeb, Gobuster, Katana, and Nikto. The project focused on identifying exposed endpoints, attack surface indicators, OSINT findings, IOC documentation, threat intelligence insights, and mapping observed activity to the MITRE ATT&CK framework.",
     image: cyberReportImg,
-    tags: [
-      "Kali Linux",
-      "OSINT",
-      "Threat Intelligence",
-      "MITRE ATT&CK",
-      "Incident Response",
-    ],
+    tags: ["Kali Linux", "OSINT", "Threat Intelligence", "MITRE ATT&CK", "Incident Response"],
     category: "security",
     github: "https://github.com/Abobbynwa/agaba_valentine_elite_cyber_report",
     live: "https://github.com/Abobbynwa/agaba_valentine_elite_cyber_report",
+    featured: true,
+  },
+  {
+    id: 10,
+    title: "Enterprise Cybersecurity Policy & Risk Management",
+    description: "Comprehensive cybersecurity policy project for a simulated mid-sized insurance company covering enterprise risk assessment, IAM, MFA, customer data protection, network and data-center security, cloud security, application security, incident response, audit, and regulatory compliance.",
+    image: cyberReportImg,
+    tags: ["Cybersecurity", "GRC", "NIST CSF", "CIS Controls", "NYDFS", "PCI DSS"],
+    category: "security",
+    github: "https://github.com/Abobbynwa/sparkle-start-up",
+    documentation: "https://github.com/Abobbynwa/sparkle-start-up/blob/main/docs/sentinelguard-cybersecurity-policy.md",
     featured: true,
   },
 ];
@@ -141,166 +137,58 @@ const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) setIsVisible(true);
+    }, { threshold: 0.1 });
     const currentSection = sectionRef.current;
-
-    if (currentSection) {
-      observer.observe(currentSection);
-    }
-
+    if (currentSection) observer.observe(currentSection);
     return () => {
-      if (currentSection) {
-        observer.unobserve(currentSection);
-      }
+      if (currentSection) observer.unobserve(currentSection);
     };
   }, []);
 
-  const filteredProjects =
-    activeFilter === "all"
-      ? projects
-      : projects.filter((project) => project.category === activeFilter);
+  const filteredProjects = activeFilter === "all"
+    ? projects
+    : projects.filter((project) => project.category === activeFilter);
 
   return (
-    <section
-      ref={sectionRef}
-      id="projects"
-      className="py-24 relative overflow-hidden"
-    >
+    <section ref={sectionRef} id="projects" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 tech-grid opacity-20" />
       <div className="absolute top-1/3 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
-
       <div className="container mx-auto px-6 relative z-10">
-        <div
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <span className="text-primary font-mono text-sm uppercase tracking-wider">
-            Portfolio
-          </span>
-
-          <h2 className="text-4xl md:text-5xl font-bold font-mono mt-2">
-            Featured <span className="gradient-text">Projects</span>
-          </h2>
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <span className="text-primary font-mono text-sm uppercase tracking-wider">Portfolio</span>
+          <h2 className="text-4xl md:text-5xl font-bold font-mono mt-2">Featured <span className="gradient-text">Projects</span></h2>
         </div>
-
-        <div
-          className={`flex flex-wrap justify-center gap-3 mb-12 transition-all duration-700 delay-200 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
+        <div className={`flex flex-wrap justify-center gap-3 mb-12 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           {categories.map((category) => {
             const Icon = category.icon;
-
             return (
-              <button
-                key={category.id}
-                type="button"
-                onClick={() => setActiveFilter(category.id)}
-                className={`flex items-center gap-2 px-5 py-2 rounded-full font-mono text-sm transition-all duration-300 ${
-                  activeFilter === category.id
-                    ? "bg-primary text-primary-foreground"
-                    : "border border-border hover:border-primary/50 text-muted-foreground hover:text-foreground"
-                }`}
-              >
+              <button key={category.id} type="button" onClick={() => setActiveFilter(category.id)} className={`flex items-center gap-2 px-5 py-2 rounded-full font-mono text-sm transition-all duration-300 ${activeFilter === category.id ? "bg-primary text-primary-foreground" : "border border-border hover:border-primary/50 text-muted-foreground hover:text-foreground"}`}>
                 <Icon className="w-4 h-4" />
                 {category.label}
               </button>
             );
           })}
         </div>
-
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
-            <div
-              key={project.id}
-              className={`group glass-card rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-500 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
-              style={{ transitionDelay: `${index * 100 + 300}ms` }}
-            >
+            <div key={project.id} className={`group glass-card rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`} style={{ transitionDelay: `${index * 100 + 300}ms` }}>
               <div className="relative h-48 bg-secondary overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
-
-                {project.featured && (
-                  <span className="absolute top-3 right-3 px-2 py-1 text-xs font-mono bg-primary text-primary-foreground rounded">
-                    Featured
-                  </span>
-                )}
+                {project.featured && <span className="absolute top-3 right-3 px-2 py-1 text-xs font-mono bg-primary text-primary-foreground rounded">Featured</span>}
               </div>
-
               <div className="p-6">
-                <h3 className="text-xl font-bold font-mono mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                  {project.description}
-                </p>
-
+                <h3 className="text-xl font-bold font-mono mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={`${project.id}-${tag}`}
-                      className="px-2 py-1 text-xs font-mono rounded bg-secondary text-muted-foreground"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {project.tags.map((tag) => <span key={`${project.id}-${tag}`} className="px-2 py-1 text-xs font-mono rounded bg-secondary text-muted-foreground">{tag}</span>)}
                 </div>
-
-                <div className="flex gap-3">
-                  {project.github && project.github !== "#" && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-muted-foreground hover:text-primary"
-                      asChild
-                    >
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github className="w-4 h-4 mr-1" />
-                        Code
-                      </a>
-                    </Button>
-                  )}
-
-                  {project.live && project.live !== "#" && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-muted-foreground hover:text-primary"
-                      asChild
-                    >
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="w-4 h-4 mr-1" />
-                        Live
-                      </a>
-                    </Button>
-                  )}
+                <div className="flex flex-wrap gap-3">
+                  {project.github && project.github !== "#" && <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary" asChild><a href={project.github} target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4 mr-1" />Code</a></Button>}
+                  {project.documentation && project.documentation !== "#" && <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary" asChild><a href={project.documentation} target="_blank" rel="noopener noreferrer"><FileText className="w-4 h-4 mr-1" />Documentation</a></Button>}
+                  {project.live && project.live !== "#" && <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary" asChild><a href={project.live} target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4 mr-1" />Live</a></Button>}
                 </div>
               </div>
             </div>
