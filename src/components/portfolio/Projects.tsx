@@ -46,17 +46,6 @@ const projects = [
     featured: true,
   },
   {
-    id: 4,
-    title: "Secure E-Commerce Platform",
-    description: "End-to-end encrypted e-commerce solution with Docker containerization, secure payment processing, and comprehensive security audits.",
-    image: ecommerceImg,
-    tags: ["Next.js", "Docker", "Security", "Payments"],
-    category: "security",
-    github: "https://github.com/Abobbynwa",
-    live: "https://github.com/Abobbynwa",
-    featured: true,
-  },
-  {
     id: 5,
     title: "Vulnerability Scanner Tool",
     description: "Custom security tool for automated vulnerability scanning and reporting. Identifies OWASP Top 10 vulnerabilities.",
